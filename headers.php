@@ -15,6 +15,9 @@ HTTP Request Headers<br />
 		}
 		return $headers;
 	}
+	foreach (getallheaders() as $name => $value) {
+		echo "$name: $value<br />";
+	}
 ?>
 </body>
 </html>
