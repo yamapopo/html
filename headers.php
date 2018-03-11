@@ -5,19 +5,13 @@
 <body>
 HTTP Request Headers<br />
 <br />
+<ul>
+<li>TEST</li>
 <?php
-	if (!function_exists('getallheaders')) {
-		function getallheaders() {
-			$headers = [];
-			foreach ($_SERVER as $name => $value) {
-			   $headers[$name] = $value;
-			}
-		}
-		return $headers;
-	}
-	foreach (getallheaders() as $name => $value) {
-		echo "$name: $value<br />";
+	foreach ($_SERVER as $name => $value) {
+		echo "<li>$name: $value</li>";
 	}
 ?>
+</ul>
 </body>
 </html>
