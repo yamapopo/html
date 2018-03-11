@@ -1,13 +1,20 @@
 <html>
-	<head>
-	</head>
-	<body>
-		HTTP Request Headers<br />
-		<br />
-		<?php
-			foreach(getallheaders() as $name => $value) {
-				echo "$nama: $value<br />"
+<head>
+<title>HTTP Request Headers</title>
+</head>
+<body>
+HTTP Request Headers<br />
+<br />
+<?php
+	if (!function_exists('getallheaders')) {
+		function getallheaders() {
+			$headers = [];
+			foreach ($_SERVER as $name => $value) {
+			   $headers[$name] = $value;
 			}
-		?>
-	</body>
+		}
+		return $headers;
+	}
+?>
+</body>
 </html>
